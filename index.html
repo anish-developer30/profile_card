@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile_card Design</title>
+    <!-- css style here  -->
+    <style>
+      :root {
+        --color-theme: #ff1756;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #fafafa;
+      }
+
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .card {
+        width: 320px;
+        height: 420px;
+        background: linear-gradient(
+          to bottom,
+          var(--color-theme) 110px,
+          #fff 110px
+        );
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(50, 50, 50, 0.3);
+        padding: 50px 0px;
+      }
+
+      .card * {
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        letter-spacing: 0.5px;
+        font-weight: 600px;
+      }
+
+      img {
+        position: relative;
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 auto;
+        box-shadow: 0 0 0 6px #fff;
+      }
+
+      .card h4 {
+        color: var(--color-theme);
+        font-size: 16px;
+        margin: 15px 0 5px 0;
+      }
+
+      .card h5 {
+        color: #454545;
+        font-weight: 400;
+        font-size: 14px;
+      }
+
+      .details {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+      }
+
+      .details h2 {
+        color: #454545;
+      }
+
+      .details span {
+        color: var(--color-theme);
+        font-weight: 600;
+      }
+
+      .buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+
+      .buttons button {
+        width: 130px;
+        padding: 4px 0;
+        border-radius: 25px;
+        border: 3px solid var(--color-theme);
+      }
+
+      .buttons button:first-child {
+        background-color: var(--color-theme);
+        color: #fafafa;
+      }
+
+      .buttons button:last-child {
+        background-color: transparent;
+        color: var(--color-theme);
+        font-weight: 500;
+      }
+      .themes {
+        margin-top: 35px;
+        background-color: #fff;
+        border-radius: 2px;
+        padding: 8px;
+        display: flex;
+        justify-content: space-around;
+      }
+      .themes button {
+        height: 20px;
+        width: 20px;
+        border: 2px solid #dddddd;
+        border-radius: 50%;
+        outline: none;
+        cursor: pointer;
+      }
+      .btn1 {
+        background-color: #05c12d;
+      }
+      .btn2 {
+        background-color: #ff1756;
+      }
+      .btn3 {
+        background-color: #3498db;
+      }
+      .btn4 {
+        background-color: #8e44ad;
+      }
+      .btn5 {
+        background-color: #fab932;
+      }
+    </style>
+    <!--========================================= -->
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <img src="./me.jpg" alt="Profile_image" />
+        <h4>Anish Rathod</h4>
+        <h5>Student</h5>
+        <div class="details">
+          <div class="column">
+            <h2>1.7K</h2>
+            <span>Followers</span>
+          </div>
+          <div class="column">
+            <h2>108</h2>
+            <span>Following</span>
+          </div>
+        </div>
+        <div class="buttons">
+          <button>Follow</button>
+          <button>Message</button>
+        </div>
+        <div class="themes">
+          <button class="btn btn1"></button>
+          <button class="btn btn2"></button>
+          <button class="btn btn3"></button>
+          <button class="btn btn4"></button>
+          <button class="btn btn5"></button>
+        </div>
+      </div>
+    </div>
+    <!-- js code  -->
+    <script>
+      const themes = document.querySelector(":root");
+      const btns = document.querySelectorAll(".btn");
+      btns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const color = e.currentTarget.classList;
+          if (color.contains("btn1")) {
+            themes.style.setProperty("--color-theme", "#05c12d");
+          } else if (color.contains("btn2")) {
+            themes.style.setProperty("--color-theme", "#ff1756");
+          } else if (color.contains("btn3")) {
+            themes.style.setProperty("--color-theme", "#3498db");
+          } else if (color.contains("btn4")) {
+            themes.style.setProperty("--color-theme", "#8e44ad");
+          } else themes.style.setProperty("--color-theme", "#fab932");
+        });
+      });
+    </script>
+  </body>
+</html>
